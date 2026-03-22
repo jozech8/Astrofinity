@@ -39,18 +39,8 @@
   }
 
   /* Nav */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 4rem;
-    background: rgba(5,10,24,0.7); backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(0,212,255,0.08); transition: background 0.3s;
-  }
-  .nav-logo {
-    font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #fff 0%, var(--cyan) 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 4rem; background: rgba(5,10,24,0.7); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,212,255,0.08); transition: background 0.3s; }
+  .nav-logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; background: linear-gradient(135deg, #fff 0%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--cyan); }
@@ -59,10 +49,7 @@
 
   /* Shared */
   .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--cyan); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;
-  }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(0,212,255,0.3), transparent); max-width: 80px; }
   .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.5rem; line-height: 1.1; }
   .btn-primary { padding: 0.85rem 2rem; background: linear-gradient(135deg, var(--blue), var(--cyan)); color: #000; font-family: var(--font-body); font-size: 0.9rem; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s, transform 0.2s; }
@@ -148,6 +135,12 @@
   .form-group textarea { min-height: 120px; resize: vertical; }
   .form-group select option { background: #0C1628; color: var(--text); }
 
+  /* Social links */
+  .social-links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem; }
+  .social-link { display: inline-flex; align-items: center; gap: 10px; color: var(--cyan); text-decoration: none; font-size: 0.9rem; font-weight: 400; transition: opacity 0.2s; }
+  .social-link:hover { opacity: 0.7; }
+  .social-link svg { flex-shrink: 0; }
+
   /* Footer */
   footer { position: relative; z-index: 1; background: #030710; border-top: 1px solid rgba(0,212,255,0.06); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; background: linear-gradient(135deg, #fff, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -155,6 +148,9 @@
   .footer-links { display: flex; gap: 1.5rem; list-style: none; }
   .footer-links a { font-size: 0.8rem; color: #3a5a74; text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--cyan); }
+  .footer-social { display: flex; gap: 1rem; align-items: center; }
+  .footer-social a { color: #3a5a74; transition: color 0.2s; display: flex; }
+  .footer-social a:hover { color: var(--cyan); }
 
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -219,7 +215,7 @@
         <div class="stat-card"><div class="stat-num">200+</div><div class="stat-label">Articles Published</div></div>
         <div class="stat-card"><div class="stat-num">8K+</div><div class="stat-label">Community Members</div></div>
         <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Deep-Sky Images</div></div>
-        <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Stars to Discover</div></div>
+        <div class="stat-card"><div class="stat-num">&#8734;</div><div class="stat-label">Stars to Discover</div></div>
       </div>
     </div>
   </div>
@@ -233,34 +229,34 @@
         <div class="section-label">From the cosmos</div>
         <h2 class="section-title">Latest Articles</h2>
       </div>
-      <a href="#blog" class="btn-ghost" style="font-size:0.85rem;">View All →</a>
+      <a href="#blog" class="btn-ghost" style="font-size:0.85rem;">View All &rarr;</a>
     </div>
     <div class="blog-grid fade-in">
       <div class="blog-card">
-        <div class="blog-img blog-img-1">🪐</div>
+        <div class="blog-img blog-img-1">&#x1FA90;</div>
         <div class="blog-body">
           <span class="blog-tag">Planets</span>
           <div class="blog-title">Saturn's Rings Are Disappearing — What Does This Mean?</div>
           <div class="blog-excerpt">Saturn's iconic rings are tilting edge-on toward Earth and slowly eroding. We explore what planetary scientists are saying.</div>
-          <div class="blog-meta">March 15, 2026 · 7 min read</div>
+          <div class="blog-meta">March 15, 2026 &middot; 7 min read</div>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-img blog-img-2">🌌</div>
+        <div class="blog-img blog-img-2">&#x1F30C;</div>
         <div class="blog-body">
           <span class="blog-tag">Deep Space</span>
           <div class="blog-title">James Webb Captures the Most Distant Galaxy Ever Seen</div>
           <div class="blog-excerpt">JWST breaks its own record again — a galaxy from just 290 million years after the Big Bang, and what it tells us about the early universe.</div>
-          <div class="blog-meta">March 8, 2026 · 10 min read</div>
+          <div class="blog-meta">March 8, 2026 &middot; 10 min read</div>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-img blog-img-3">🔭</div>
+        <div class="blog-img blog-img-3">&#x1F52D;</div>
         <div class="blog-body">
           <span class="blog-tag">Astrophotography</span>
           <div class="blog-title">Beginner's Guide to Photographing the Milky Way</div>
           <div class="blog-excerpt">You don't need a $5000 telescope. Here's how to capture stunning galactic core images with just a DSLR and a dark sky.</div>
-          <div class="blog-meta">February 22, 2026 · 12 min read</div>
+          <div class="blog-meta">February 22, 2026 &middot; 12 min read</div>
         </div>
       </div>
     </div>
@@ -276,9 +272,9 @@
         <h2 class="section-title">Space News Feed</h2>
       </div>
       <div class="news-tabs">
-        <button class="news-tab active" data-feed="nasa" onclick="loadFeed('nasa',this)">NASA</button>
-        <button class="news-tab" data-feed="spacenews" onclick="loadFeed('spacenews',this)">SpaceNews</button>
-        <button class="news-tab" data-feed="esa" onclick="loadFeed('esa',this)">ESA</button>
+        <button class="news-tab active" onclick="loadFeed('nasa',this)">NASA</button>
+        <button class="news-tab" onclick="loadFeed('spacenews',this)">SpaceNews</button>
+        <button class="news-tab" onclick="loadFeed('esa',this)">ESA</button>
       </div>
     </div>
     <div id="news-grid" class="news-grid">
@@ -295,19 +291,48 @@
         <div class="section-label">Reach Out</div>
         <h2 class="section-title">Let's Connect Across the Stars</h2>
         <p style="color:var(--muted);font-weight:300;margin-bottom:2.5rem;">Have a story idea, partnership proposal, or just want to geek out about space? We'd love to hear from you.</p>
+
+        <!-- Email -->
         <div class="contact-item">
-          <div class="contact-icon">📬</div>
-          <div class="contact-info"><h3>Email Us</h3><p>hello@astrofinity.in</p></div>
+          <div class="contact-icon">&#x1F4EC;</div>
+          <div class="contact-info">
+            <h3>Email Us</h3>
+            <p>hello@astrofinity.in</p>
+          </div>
         </div>
+
+        <!-- Social -->
         <div class="contact-item">
-          <div class="contact-icon">🌐</div>
-          <div class="contact-info"><h3>Social</h3><p>@astrofinity on Instagram, X &amp; YouTube</p></div>
+          <div class="contact-icon">&#x1F310;</div>
+          <div class="contact-info">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+              <a href="https://www.youtube.com/astrofinity" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+                </svg>
+                youtube.com/astrofinity
+              </a>
+              <a href="https://www.instagram.com/astrofinity8/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @astrofinity8
+              </a>
+            </div>
+          </div>
         </div>
+
+        <!-- Location -->
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-info"><h3>Based In</h3><p>India · Available Globally</p></div>
+          <div class="contact-icon">&#x1F4CD;</div>
+          <div class="contact-info">
+            <h3>Based In</h3>
+            <p>India &middot; Available Globally</p>
+          </div>
         </div>
       </div>
+
       <div class="contact-form fade-in">
         <div class="form-row">
           <div class="form-group"><label>First Name</label><input type="text" placeholder="Yuri"></div>
@@ -325,15 +350,28 @@
           </select>
         </div>
         <div class="form-group"><label>Message</label><textarea placeholder="Tell us what's on your mind..."></textarea></div>
-        <button class="btn-primary" style="width:100%;text-align:center;">Send Message →</button>
+        <button class="btn-primary" style="width:100%;text-align:center;">Send Message &rarr;</button>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
   <span class="footer-logo">Astrofinity</span>
-  <p>© 2026 Astrofinity · All Rights Reserved</p>
+  <p>&copy; 2026 Astrofinity &middot; All Rights Reserved</p>
+  <div class="footer-social">
+    <a href="https://www.youtube.com/astrofinity" target="_blank" rel="noopener noreferrer" title="YouTube">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/astrofinity8/" target="_blank" rel="noopener noreferrer" title="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+  </div>
   <ul class="footer-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -344,22 +382,16 @@
 </footer>
 
 <script>
-  /* Scroll fade-in */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-  /* Nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.style.background = window.scrollY > 50 ? 'rgba(5,10,24,0.95)' : 'rgba(5,10,24,0.7)';
   });
 
-  /* ── News Feed ──
-     Uses rss2json.com — a free, no-signup RSS-to-JSON proxy.
-     Works once the site is hosted on Netlify (CORS blocks it when opened as a local file).
-  */
   const FEEDS = {
     nasa:      { url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', label: 'NASA' },
     spacenews: { url: 'https://spacenews.com/feed/',                     label: 'SpaceNews' },
@@ -387,16 +419,12 @@
   }
 
   async function loadFeed(key, btn) {
-    /* Update active tab */
     document.querySelectorAll('.news-tab').forEach(t => t.classList.remove('active'));
     if (btn) btn.classList.add('active');
-
     const grid = document.getElementById('news-grid');
     grid.innerHTML = '<div class="news-state loading">Fetching the latest from space...</div>';
-
     const feed = FEEDS[key];
     const api  = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}&count=9`;
-
     try {
       const res  = await fetch(api);
       if (!res.ok) throw new Error('Network error');
@@ -405,9 +433,8 @@
       renderCards(data.items, feed.label);
     } catch {
       grid.innerHTML = `<div class="news-state error" style="grid-column:1/-1">
-        ⚠️ Could not load the feed right now.<br><br>
-        <small style="opacity:0.6">This works once the site is live on Netlify.
-        Opening the file directly in a browser blocks external requests due to browser security (CORS).</small>
+        Could not load the feed right now.<br><br>
+        <small style="opacity:0.6">News feeds work once the site is live on Netlify. Opening the file locally blocks external requests due to browser security.</small>
       </div>`;
     }
   }
